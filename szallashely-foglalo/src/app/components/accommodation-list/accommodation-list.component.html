@@ -1,0 +1,27 @@
+<h1 id="center" >Szállások:</h1>
+<div class="list-container">
+    
+    <mat-card *ngFor="let acc of accommodations" class="accommodation-card">
+      <img mat-card-image [src]="acc.imageUrl" alt="{{ acc.name }}">
+      <mat-card-header>
+        <mat-card-title><strong>{{ acc.name }}</strong></mat-card-title>
+        <mat-card-subtitle>{{ acc.city }} - {{ acc.category }}</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p>{{ acc.description | slice:0:30 }}{{ acc.description.length > 30 ? '...' : '' }}</p>
+        <p><strong>{{ acc.price | number }} Ft / éj</strong></p>
+        <p><em>({{ acc.price | toEuro:'€' }} / éj)</em></p>
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [routerLink]="['/accommodations', acc.id]">
+          Részletek
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <button mat-raised-button color="primary" class="add-combined-button" (click)="openAddDialog()">
+    <mat-icon>add</mat-icon>
+    <span>Szálláshely hozzáadása</span>
+  </button>

@@ -1,0 +1,32 @@
+.navbar {
+  padding: 0 16px;
+
+  .brand {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .desktop-nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: block;
+    }
+  }
+}

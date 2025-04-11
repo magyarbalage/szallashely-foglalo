@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" class="navbar">
+  <span class="brand">🏨 SzállásFoglaló</span>
+  <span class="spacer"></span>
+
+  <!-- Asztali nézet -->
+  <div class="desktop-nav">
+    <a mat-button routerLink="/" routerLinkActive="active-link">Kezdőlap</a>
+    <a mat-button routerLink="/accommodations" routerLinkActive="active-link">Szállások</a>
+    <a mat-button routerLink="/bookings" routerLinkActive="active-link">Foglalások</a>
+  </div>
+
+  <!-- Mobil nézet -->
+  <div class="mobile-nav">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/" routerLinkActive="active">Kezdőlap</button>
+      <button mat-menu-item routerLink="/accommodations" routerLinkActive="active">Szállások</button>
+      <button mat-menu-item routerLink="/bookings" routerLinkActive="active">Foglalások</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

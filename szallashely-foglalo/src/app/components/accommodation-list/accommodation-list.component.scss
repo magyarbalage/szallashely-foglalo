@@ -1,0 +1,66 @@
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    padding: 32px;
+  }
+  
+  .accommodation-card {
+    width: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
+  
+    &:hover {
+      transform: translateY(-4px);
+    }
+  
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+  
+    mat-card-content {
+      padding-top: 8px;
+  
+      p {
+        margin-bottom: 12px;
+      }
+    }
+  
+    mat-card-actions {
+      display: flex;
+      justify-content: flex-end;
+      padding-bottom: 16px;
+    }
+    mat-card-title{
+        padding-bottom: 20px;
+    }
+  }
+  .add-combined-button {
+    position: fixed;
+    bottom: 100px;
+    right: 32px;
+    z-index: 1000;
+  
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  
+    padding: 12px 20px;
+    border-radius: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  
+    font-weight: 500;
+    font-size: 14px;
+  
+    mat-icon {
+      font-size: 20px;
+    }
+  }
+  #center{
+    text-align :center;
+  }
+  

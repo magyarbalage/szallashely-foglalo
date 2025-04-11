@@ -1,0 +1,34 @@
+.form-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #3f51b5;
+  }
+  
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 16px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  ::ng-deep .snackbar-success {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  ::ng-deep .snackbar-error {
+    background-color: #f44336;
+    color: white;
+  }

@@ -1,0 +1,40 @@
+<div class="detail-wrapper" *ngIf="accommodation">
+    <div class="back-button-wrapper">
+        <button mat-stroked-button color="primary" class="back-button" routerLink="/accommodations">
+            ⬅ Vissza a listához
+          </button>
+    </div>
+  
+   
+        
+     
+  
+    <div class="info-booking-container">
+      <!-- Szállás információ -->
+      <mat-card class="info-card">
+        <img mat-card-image [src]="accommodation.imageUrl" alt="{{ accommodation.name }}">
+  
+        <mat-card-content>
+          <p class="left-subtitle">🏙️ Város: <strong>{{ accommodation.city }}</strong></p>
+          <p class="left-subtitle">🏷️ Kategória: <strong>{{ accommodation.category }}</strong></p>
+  
+          <h3>Leírás</h3>
+          <p>{{ accommodation.description }}</p>
+  
+          <h3>Ár</h3>
+          <p><strong>{{ accommodation.price | number }} Ft / éj</strong></p>
+          <p>({{ accommodation.price | toEuro:'€' }} Ft / éj)</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <!-- Foglalási űrlap -->
+      <div class="booking-box equal-height">
+        <h2 class="centered-title">📝 Foglalás</h2>
+        <app-booking-form
+          [accommodationId]="accommodation.id"
+          (bookingSaved)="onBookingSaved()">
+        </app-booking-form>
+      </div>
+    </div>
+  </div>
+  

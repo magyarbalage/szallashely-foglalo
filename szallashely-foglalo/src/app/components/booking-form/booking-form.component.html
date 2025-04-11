@@ -1,0 +1,36 @@
+<div class="form-wrapper">
+  <form [formGroup]="bookingForm" (ngSubmit)="submit()">
+    <!-- Érkezés dátuma -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Érkezés dátuma</mat-label>
+      <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Távozás dátuma -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Távozás dátuma</mat-label>
+      <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Név -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Név</mat-label>
+      <input matInput formControlName="userName" required>
+    </mat-form-field>
+
+    <!-- Email -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email cím</mat-label>
+      <input matInput type="email" formControlName="userEmail" required>
+    </mat-form-field>
+
+    <!-- Gomb -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="!bookingForm.valid">
+      Foglalás
+    </button>
+  </form>
+</div>
