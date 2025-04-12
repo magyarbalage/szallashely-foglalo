@@ -1,0 +1,15 @@
+
+<div class="review-list">
+    <mat-card *ngFor="let review of reviews" class="review-card">
+      <mat-card-content>
+        <h3>{{ review.userName || 'Anonymus' }}</h3>
+        <div class="stars">
+          <mat-icon *ngFor="let s of stars(review.rating)">
+            {{ s ? 'star' : 'star_border' }}
+          </mat-icon>
+        </div>
+        <p *ngIf="review.comment" class="comment">"{{ review.comment }}"</p>
+        <small class="date">{{ review.createdAt | timestampToDate | date:'yyyy.MM.dd. HH:mm' }}</small>
+      </mat-card-content>
+    </mat-card>
+  </div>

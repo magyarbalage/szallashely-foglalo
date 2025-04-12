@@ -1,5 +1,5 @@
 export interface Accommodation {
-    id: number;
+    id: string;
     name: string;
     city: string;
     price: number;

@@ -1,8 +1,9 @@
-// src/app/models/review.model.ts
 export interface Review {
-    id: number;
-    accommodationId: number;
-    userId: number;
-    rating: number;
-    comment: string;
-  }
+  id?: string;
+  accommodationId: string;
+  rating: number;
+  comment?: string;
+  createdAt: Date;
+  userName?: string; 
+  userEmail?: string;
+}

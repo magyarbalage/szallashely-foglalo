@@ -3,7 +3,7 @@ export interface Booking {
   userId: number;
   userName: string; // új
   userEmail: string;
-  accommodationId: number;
+  accommodationId: string;
   startDate: Date;
   endDate: Date;
   status: 'pending' | 'confirmed' | 'cancelled';

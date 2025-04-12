@@ -26,7 +26,7 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ['./booking-form.component.scss']
 })
 export class BookingFormComponent {
-  @Input() accommodationId!: number;
+  @Input() accommodationId!: string;
   bookingForm: FormGroup;
   @Output() bookingSaved = new EventEmitter<void>();
   constructor(

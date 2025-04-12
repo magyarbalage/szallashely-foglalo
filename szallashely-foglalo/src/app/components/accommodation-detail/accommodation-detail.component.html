@@ -36,5 +36,18 @@
         </app-booking-form>
       </div>
     </div>
+
+    <section class="review-section">
+      <h2>💬 Értékelések</h2>
+    
+      <app-review-form
+        [accommodationId]="accommodation.id"
+        (reviewAdded)="refreshReviews()">
+      </app-review-form>
+    
+      <app-review-list
+        [accommodationId]="accommodation.id">
+      </app-review-list>
+    </section>
   </div>
   

@@ -1,0 +1,30 @@
+<form [formGroup]="reviewForm" (ngSubmit)="submit()" class="review-form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Név (opcionális)</mat-label>
+      <input matInput formControlName="userName" placeholder="pl. Nagy Gábor">
+    </mat-form-field>
+  
+    <mat-checkbox formControlName="anonymous" class="mb-2">
+      Anonim értékelés
+    </mat-checkbox>
+  
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Értékelés</mat-label>
+      <mat-select formControlName="rating" required>
+        <mat-option *ngFor="let r of [1,2,3,4,5]" [value]="r">
+          {{ r }} csillag
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Megjegyzés (opcionális)</mat-label>
+      <textarea matInput formControlName="comment" rows="3"></textarea>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="!reviewForm.valid">
+      Értékelés elküldése
+    </button>
+  </form>
+  
