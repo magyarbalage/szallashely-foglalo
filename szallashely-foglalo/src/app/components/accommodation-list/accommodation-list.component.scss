@@ -63,4 +63,20 @@
   #center{
     text-align :center;
   }
+  .filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 16px;
+  justify-content: center;
+
+  mat-form-field {
+    width: 200px;
+  }
+
+  button {
+    align-self: center;
+    height: 56px;
+  }
+}
   

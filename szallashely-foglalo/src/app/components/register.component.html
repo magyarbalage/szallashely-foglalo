@@ -1,0 +1,17 @@
+<div class="auth-wrapper">
+<form [formGroup]="form" (ngSubmit)="register()">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" type="email" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Jelszó</mat-label>
+    <input matInput formControlName="password" type="password" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">
+    Regisztráció
+  </button>
+</form>
+</div>

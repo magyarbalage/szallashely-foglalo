@@ -1,0 +1,36 @@
+.profile-wrapper {
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.title, .subtitle {
+  text-align: center;
+  color: #3f51b5;
+  margin: 24px 0 16px;
+}
+
+.profile-card, .booking-card {
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.no-data {
+  text-align: center;
+  color: gray;
+  margin-top: 24px;
+  font-style: italic;
+}
+.delete-button {
+  border-radius: 20px;
+  font-weight: 600;
+  padding: 6px 16px;
+  box-shadow: 0 3px 6px rgba(244, 67, 54, 0.2);
+  transition: all 0.2s ease-in-out;
+  margin:0 0 0 auto;
+
+  &:hover {
+    background-color: #d32f2f;
+    box-shadow: 0 6px 12px rgba(244, 67, 54, 0.3);
+  }
+}

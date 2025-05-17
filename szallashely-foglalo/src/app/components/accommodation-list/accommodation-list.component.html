@@ -1,4 +1,32 @@
 <h1 id="center" >Szállások:</h1>
+<div class="filter-bar">
+  <mat-form-field appearance="fill">
+    <mat-label>Kategória</mat-label>
+    <mat-select [(ngModel)]="selectedCategory" (selectionChange)="filterByCategory()">
+      <mat-option value="">Összes</mat-option>
+      <mat-option value="Hotel">Hotel</mat-option>
+      <mat-option value="Apartman">Apartman</mat-option>
+      <mat-option value="Vendégház">Vendégház</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Max ár (Ft)</mat-label>
+    <input matInput type="number" [(ngModel)]="maxPrice" (keyup.enter)="filterByPrice()" placeholder="Pl. 20000">
+  </mat-form-field>
+
+  <button mat-stroked-button color="primary" (click)="sortByPrice()">
+    Ár szerint növekvő
+  </button>
+
+  <button mat-stroked-button color="accent" (click)="loadRecent()">
+    Legfrissebbek
+  </button>
+  <button mat-stroked-button color="warn" (click)="clearFilters()">
+    Szűrés törlése
+  </button>
+
+</div>
 <div class="list-container">
     
     <mat-card *ngFor="let acc of accommodations" class="accommodation-card">

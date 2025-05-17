@@ -1,9 +1,15 @@
 <div class="form-wrapper">
   <form [formGroup]="bookingForm" (ngSubmit)="submit()">
     <!-- Érkezés dátuma -->
+     <h4>Foglalt időszakok:</h4>
+      <ul>
+        <li *ngFor="let b of existingBookings">
+          {{ b.startDate | timestampToDate | date:'yyyy.MM.dd.' }} - {{ b.endDate | timestampToDate | date:'yyyy.MM.dd.' }}
+        </li>
+      </ul>
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Érkezés dátuma</mat-label>
-      <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+      <input matInput [matDatepicker]="startPicker" formControlName="startDate" [min]="today">
       <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
       <mat-datepicker #startPicker></mat-datepicker>
     </mat-form-field>
@@ -11,7 +17,7 @@
     <!-- Távozás dátuma -->
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Távozás dátuma</mat-label>
-      <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+      <input matInput [matDatepicker]="endPicker" formControlName="endDate" [min]="today">
       <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
       <mat-datepicker #endPicker></mat-datepicker>
     </mat-form-field>

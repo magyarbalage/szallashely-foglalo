@@ -15,6 +15,16 @@
     display: flex;
     gap: 8px;
   }
+   .nav-left{
+    display: flex;
+    gap: 8px;
+    align-items: left;
+   }
+  .nav-right {
+    display: flex;
+    gap: 8px;
+    align-items: right;
+  }
 
   .mobile-nav {
     display: none;

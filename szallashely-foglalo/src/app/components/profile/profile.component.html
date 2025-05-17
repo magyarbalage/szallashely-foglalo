@@ -1,0 +1,38 @@
+<div class="profile-wrapper">
+  <h2 class="title">👤 Profilom</h2>
+
+  <mat-card class="profile-card" *ngIf="userEmail">
+    <mat-card-title>Email:</mat-card-title>
+    <mat-card-content>
+      <p><strong>{{ userEmail }}</strong></p>
+    </mat-card-content>
+  </mat-card>
+
+  <h3 class="subtitle">🗓️ Foglalásaim</h3>
+
+  <div *ngIf="userBookings.length > 0; else noBookings">
+    <mat-card class="booking-card" *ngFor="let booking of userBookings">
+      <mat-card-header>
+
+  <mat-card-subtitle>Státusz: {{ booking.status | titlecase }}</mat-card-subtitle>
+</mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <p>Érkezés: <strong>{{ booking.startDate | timestampToDate | date:'yyyy.MM.dd. HH:mm' }}</strong></p>
+        <p>Távozás: <strong>{{ booking.endDate | timestampToDate | date:'yyyy.MM.dd. HH:mm' }}</strong></p>
+        <p>Létrehozva: <strong>{{ booking.createdAt | timestampToDate | date:'medium' }}</strong></p>
+        <p *ngIf="booking.userName">Név: <strong>{{ booking.userName }}</strong></p>
+        <p *ngIf="booking.userEmail">Email: <strong>{{ booking.userEmail }}</strong></p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" class="delete-button" (click)="deleteBooking(booking.id)">
+  🗑️ Törlés
+</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <ng-template #noBookings>
+    <p class="no-data">Nincs még foglalásod.</p>
+  </ng-template>
+</div>

@@ -3,10 +3,21 @@
   <span class="spacer"></span>
 
   <!-- Asztali nézet -->
-  <div class="desktop-nav">
+  <div class="nav-left">
     <a mat-button routerLink="/" routerLinkActive="active-link">Kezdőlap</a>
     <a mat-button routerLink="/accommodations" routerLinkActive="active-link">Szállások</a>
     <a mat-button routerLink="/bookings" routerLinkActive="active-link">Foglalások</a>
+  </div>
+  <div class="nav-right">
+    <!-- Bejelentkezés / Kijelentkezés -->
+    <ng-container *ngIf="(user$ | async) as user; else guest">
+      <a mat-button routerLink="/profile" routerLinkActive="active-link">Profilom</a>
+      <button mat-button (click)="logout()">Kijelentkezés</button>
+    </ng-container>
+    <ng-template #guest>
+      <a mat-button routerLink="/login">Bejelentkezés</a>
+      <a mat-button routerLink="/register">Regisztráció</a>
+    </ng-template>
   </div>
 
   <!-- Mobil nézet -->
@@ -18,6 +29,14 @@
       <button mat-menu-item routerLink="/" routerLinkActive="active">Kezdőlap</button>
       <button mat-menu-item routerLink="/accommodations" routerLinkActive="active">Szállások</button>
       <button mat-menu-item routerLink="/bookings" routerLinkActive="active">Foglalások</button>
+      <ng-container *ngIf="(user$ | async) as user; else mobileGuest">
+        <button mat-menu-item routerLink="/profile" routerLinkActive="active">Profilom</button>
+        <button mat-menu-item (click)="logout()">Kijelentkezés</button>
+      </ng-container>
+      <ng-template #mobileGuest>
+        <button mat-menu-item routerLink="/login">Bejelentkezés</button>
+        <button mat-menu-item routerLink="/register">Regisztráció</button>
+      </ng-template>
     </mat-menu>
   </div>
 </mat-toolbar>

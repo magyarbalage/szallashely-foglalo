@@ -10,23 +10,37 @@ import { ToEuroPipe } from '../../pipes/to-euro.pipe';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ReviewListComponent } from '../review-list/review-list.component';
 import { ReviewFormComponent } from '../review-form/review-form.component';
-
+import { AuthService } from '../../services/auth.service';
+import { Observable } from 'rxjs';
+import { User } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-accommodation-detail',
   standalone: true,
-  imports: [CommonModule, MatCardModule, BookingFormComponent, RouterModule,ToEuroPipe,ReviewListComponent,ReviewFormComponent],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    BookingFormComponent,
+    RouterModule,
+    ToEuroPipe,
+    ReviewListComponent,
+    ReviewFormComponent
+  ],
   templateUrl: './accommodation-detail.component.html',
   styleUrls: ['./accommodation-detail.component.scss']
 })
 export class AccommodationDetailComponent implements OnInit {
   accommodation!: Accommodation;
+  user$: Observable<User | null>;
 
   constructor(
     private route: ActivatedRoute,
     private accommodationService: AccommodationService,
-    private snackBar: MatSnackBar
-  ) {}
+    private snackBar: MatSnackBar,
+    private authService: AuthService
+  ) {
+    this.user$ = this.authService.user$;
+  }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -36,12 +50,10 @@ export class AccommodationDetailComponent implements OnInit {
       });
     }
   }
+
   onBookingSaved() {
     this.snackBar.open('✅ Foglalás sikeresen elmentve!', 'OK', { duration: 3000 });
   }
- 
-  refreshReviews(): void {
-    
-  }
-  
+
+  refreshReviews(): void {}
 }
