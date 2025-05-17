@@ -22,6 +22,8 @@ Webes szálláshely-foglaló alkalmazás Angular keretrendszerben, Firebase back
 - Értékelés hozzáadása a szállásokhoz
 - Reszponzív design mobilnézethez
 - Saját Pipe és adatátadás komponensek között
+- Regisztráció/Bejelentkezés
+- Saját profil oldal
 
 ## 🧪 Indítás
 ```bash
