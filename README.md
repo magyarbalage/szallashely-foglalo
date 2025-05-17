@@ -18,7 +18,8 @@ Webes szálláshely-foglaló alkalmazás Angular keretrendszerben, Firebase back
 - Foglalási űrlap (érkezés, távozás, név, e-mail)
 - Foglalások mentése Firestore-ba
 - Foglalások listázása
-- Szálláshely hozzáadása 
+- Szálláshely hozzáadása
+- Értékelés hozzáadása a szállásokhoz
 - Reszponzív design mobilnézethez
 - Saját Pipe és adatátadás komponensek között
 
