@@ -9,7 +9,7 @@
       </ul>
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Érkezés dátuma</mat-label>
-      <input matInput [matDatepicker]="startPicker" formControlName="startDate" [min]="today">
+      <input matInput [matDatepicker]="startPicker" formControlName="startDate" >
       <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
       <mat-datepicker #startPicker></mat-datepicker>
     </mat-form-field>
@@ -17,7 +17,7 @@
     <!-- Távozás dátuma -->
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Távozás dátuma</mat-label>
-      <input matInput [matDatepicker]="endPicker" formControlName="endDate" [min]="today">
+      <input matInput [matDatepicker]="endPicker" formControlName="endDate" >
       <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
       <mat-datepicker #endPicker></mat-datepicker>
     </mat-form-field>
