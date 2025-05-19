@@ -6,6 +6,11 @@
 ## 📌 Projekt témája
 Webes szálláshely-foglaló alkalmazás Angular keretrendszerben, Firebase backenddel.
 
+## HOSTOLT URL:
+
+https://webfejl-keretrendszerek.web.app/
+
+
 ## 🚀 Technológiák
 - Angular 17 (standalone komponensek)
 - Angular Material
